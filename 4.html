@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 600px;
+        height: 400px;
+        background-color: bisque;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+      }
+
+      .left {
+        width: 70%;
+        height: 100%;
+        background-color: pink;
+      }
+      .right {
+        width: 20%;
+        height: 98%;
+        background-color: pink;
+      }
+      .spa1 {
+        position: absolute;
+        left: 30px;
+        bottom: 20px;
+      }
+      .back {
+        position: absolute;
+        width: 70%;
+        height: 50px;
+        bottom: 0;
+        left: 15px;
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="left">
+        <img
+          src="https://t7.baidu.com/it/u=473920583,34141612&fm=193&f=GIF"
+          alt=""
+          style="width: 100%; height: 100%"
+        />
+      </div>
+      <div class="back">
+        <span class="spa1">自行车1</span>
+      </div>
+
+      <div class="right" onmouseover="huaguo()"></div>
+    </div>
+    <script>
+      let arr_imgs = [
+        "https://t7.baidu.com/it/u=473920583,34141612&fm=193&f=GIF",
+        "https://t7.baidu.com/it/u=1994210123,2038969757&fm=193&f=GIF",
+        "https://t7.baidu.com/it/u=2363718429,509485063&fm=193&f=GIF",
+        "https://t7.baidu.com/it/u=3055244383,780149959&fm=193&f=GIF",
+      ];
+     
+      let right = document.querySelector(".right");
+      let str = ["自行车1", "自行车2", "自行车3", "自行车4"];
+      let color =['aquamarine','green','pink','yellow']
+      //渲染右侧图片
+      showImg();
+      function showImg() {
+        let imgs = ``;
+        arr_imgs.forEach((item, index) => {
+          imgs += `<img src="${arr_imgs[index]}" alt="" indexs=${index} style="width: 100%; height:95px">`;
+        });
+        right.innerHTML = imgs;
+      }
+      //鼠标滑过
+      function huaguo() {
+        let left = document.querySelector(".left");
+        let spa1 = document.querySelector(".spa1");
+        let back=document.querySelector('.back')
+
+        //获取右侧img的自定义属性值
+        let index = event.target.getAttribute("indexs");
+        left_imgs = `<img src="${arr_imgs[index]}" alt="" style="width: 100%; height: 100%; ">`;
+        left.innerHTML = left_imgs;
+        //文本内容
+        spa1.innerHTML = str[index];
+        back.style.backgroundColor=color[index];
+      }
+    </script>
+  </body>
+</html>
