@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 70%;
+        width: 70%;
+        margin: 100px;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color: #000;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
+      }
+      .swiper {
+        position: relative;
+      }
+      .bom {
+        /* background: pink; */
+        position: absolute;
+        height: 70px;
+        width: 100%;
+        bottom: 0;
+        z-index: 1;
+      }
+      .bom_min {
+        background:rgba(0, 0, 0, 0.4);
+        position: relative;
+        height: 70px;
+        width: 100%;
+        bottom: 0;
+        z-index: 2;
+      }
+      .left {
+        position: absolute;
+        right: 85px;
+        bottom: 45px;
+      }
+      .right {
+        position: absolute;
+        right: -4px;
+        bottom: 45px;
+      }
+      /* 改变箭头大小 */
+      .swiper-button-prev:after,
+      .swiper-button-next:after {
+        font-size: 20px !important;
+      }
+      .sp1 {
+        position: absolute;
+        left: 20px;
+        top: 10px;
+      }
+      .swiper-pagination {
+        width: 33% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            src="https://img2.baidu.com/it/u=2015865969,3401990894&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=546"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://t7.baidu.com/it/u=2135039318,3787247340&fm=193&f=GIF"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://t7.baidu.com/it/u=1534596820,3811128743&fm=193&f=GIF"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://t7.baidu.com/it/u=2505344560,1090308877&fm=193&f=GIF"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://t7.baidu.com/it/u=848096684,3883475370&fm=193&f=GIF"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div class="bom">
+        <div class="bom_min">
+          <span class="sp1">阿斯顿1</span>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="left">
+          <div class="swiper-button-prev" onclick="cli(1)"></div>
+        </div>
+        <div class="right">
+          <div class="swiper-button-next" onclick="cli(2)"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Initialize Swiper -->
+    <script>
+      //全局下标
+      let index = 0;
+      let str = ["阿斯顿1", "阿斯顿2", "阿斯顿3", "阿斯顿4", "阿斯顿5"];
+      let color = [
+        "rgba(0, 0, 0, 0.4)",
+        "rgb(60, 179, 113 , 0.5)",
+        "rgb(106, 90, 205 ,0.6)",
+        "rgb(106, 90, 25,0.5)",
+        "rgb(176, 99, 205,0.5)",
+      ];
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            console.log(index, className);
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+          },
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      function cli(ind) {
+        let sp1 = document.querySelector(".sp1");
+        let bom_min = document.querySelector(".bom_min");
+
+        if (ind == 1) {
+          --index;
+          sp1.innerHTML = str[index];
+
+          bom_min.style.backgroundColor = color[index];
+        } else {
+          ++index;
+          sp1.innerHTML = str[index];
+
+          bom_min.style.backgroundColor = color[index];
+        }
+        console.log(index);
+      }
+    </script>
+  </body>
+</html>

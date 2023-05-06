@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 700px;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height:55%;
+        margin:25% auto;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: rgba(0, 0, 0, 0.8);
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+      }
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .swiper-slide  p{
+        margin: 0;
+        color: white;
+      }
+      .left{
+        position: absolute;
+        right: 100px;
+    top:-70px;
+      }
+      .right{
+        position: absolute;
+        right: 5px;
+    top:-70px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="https://t7.baidu.com/it/u=3624060246,2658807528&fm=193&f=GIF"
+                alt=""
+              />
+             <p>你好</p>
+             <p>迷失逃脱</p>
+            </div>
+    
+            <div class="swiper-slide">
+              <img
+                src="https://t7.baidu.com/it/u=4011884437,1013465345&fm=193&f=GIF"
+                alt=""
+              />
+              <p>你好</p>
+             <p>迷失逃脱</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://t7.baidu.com/it/u=1976151859,4180216297&fm=193&f=GIF"
+                alt=""
+              />
+              <p>你好</p>
+             <p>迷失逃脱</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://t7.baidu.com/it/u=1346251152,1975422026&fm=193&f=GIF"
+                alt=""
+              />
+              <p>你好</p>
+              <p>迷失逃脱</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://t7.baidu.com/it/u=119053525,1145226560&fm=193&f=GIF"
+                alt=""
+              />
+              <p>你好</p>
+              <p>迷失逃脱</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://t7.baidu.com/it/u=3771085697,3894727294&fm=193&f=GIF"
+                alt=""
+              />
+              <p>你好</p>
+              <p>迷失逃脱</p>
+            </div>
+            <div class="swiper-slide">
+                <img
+                src="https://t7.baidu.com/it/u=4278215397,2088577860&fm=193&f=GIF"
+                alt=""
+              />
+              <p>植物</p>
+              <p>保护环境</p>
+            </div>
+            <div class="swiper-slide">
+                <img
+                src="https://t7.baidu.com/it/u=4194797926,2144933284&fm=193&f=GIF"
+                alt=""
+              />
+              <p>植物</p>
+              <p>保护环境</p>
+            </div>
+            <div class="swiper-slide">
+                <img
+                src="https://t7.baidu.com/it/u=977361633,847178935&fm=193&f=GIF"
+                alt=""
+              />
+              <p>植物</p>
+              <p>保护环境</p>
+            </div>
+            <div class="swiper-slide">
+                <img
+                src="https://t7.baidu.com/it/u=2734278011,3801543751&fm=193&f=GIF"
+                alt=""
+              />
+              <p>植物</p>
+              <p>保护环境</p>
+            </div>
+            <div class="swiper-slide">
+                <img
+                src="https://t7.baidu.com/it/u=824649223,881307550&fm=193&f=GIF"
+                alt=""
+              />
+              <p>植物</p>
+              <p>保护环境</p>
+            </div>
+            <div class="swiper-slide">
+                <img
+                src="https://t7.baidu.com/it/u=4071610061,2917123939&fm=193&f=GIF"
+                alt=""
+              />
+              <p>动物</p>
+              <p>保护动物</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+              src="https://t7.baidu.com/it/u=860330160,4117395242&fm=193&f=GIF"
+              alt=""
+            />
+            <p>动物</p>
+            <p>保护动物</p>
+          </div>
+          <div class="swiper-slide">
+              <img
+              src="https://t7.baidu.com/it/u=1392863136,806273060&fm=193&f=GIF"
+              alt=""
+            />
+            <p>动物</p>
+            <p>保护动物</p>
+          </div>
+          <div class="swiper-slide">
+              <img
+              src="https://t7.baidu.com/it/u=4127536459,3471889489&fm=193&f=GIF"
+              alt=""
+            />
+            <p>动物</p>
+            <p>保护动物</p>
+          </div>
+          <div class="swiper-slide">
+              <img
+              src="https://t7.baidu.com/it/u=3087651443,1244120483&fm=193&f=GIF"
+              alt=""
+            />
+            <p>动物</p>
+            <p>保护动物</p>
+          </div>
+          <div class="swiper-slide">
+              <img
+              src="https://t7.baidu.com/it/u=291173558,242040747&fm=193&f=GIF"
+              alt=""
+            />
+            <p>动物</p>
+            <p>保护动物</p>
+          </div>
+          <div class="swiper-slide">
+              <img
+              src="https://t7.baidu.com/it/u=671375251,1357626043&fm=193&f=GIF"
+              alt=""
+            />
+            <p>动物</p>
+            <p>保护动物</p>
+          </div>
+          </div>
+          <!--  -->
+          
+        </div>
+        <!-- 其实就是把左右按钮定位到右上角 -->
+     
+      <div class="left">
+        <div class="swiper-button-prev"></div>
+      </div>
+  <div class="right">
+    <div class="swiper-button-next"></div>
+ </div>
+      <!-- <div class="swiper-pagination"></div> -->
+    <!-- </div> --> 
+
+    <!-- Swiper JS
+    <script src="../swiper-bundle.min.js"></script> -->
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 6, //可放n张图片
+        spaceBetween: 10, //图片与图片之间的距离
+        // slidesPerView : 6, //幻灯片视图，显示在屏幕上的页数
+         slidesPerGroup : 6, //每列幻灯片的数量
+      
+        loop: false, //循环效果，默认为false，添加后实现循环
+        loopFillGroupWithBlank: true, //将用空白slide 填充slide 数量不足的组。需要与  slidesPerGroup 一起使用
+    
+       
+        // pagination: {
+        //   el: ".swiper-pagination",
+        //   clickable: true,
+        // },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
